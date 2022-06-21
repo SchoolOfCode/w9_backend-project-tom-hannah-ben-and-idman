@@ -27,7 +27,7 @@ export async function getPortfoliosByKeyword(keyword) {
 //add new portfolio
 export async function addNewPortfolio(portfolio) {
   const res = await query(
-    "INSERT INTO portfolios (site_url, site_image, description, experience_level, key_word_search_data, voting_score) VALUES ($1, $2, $3, $4, $5, $6);",
+    "INSERT INTO portfolios (site_url, site_image, description, experience_level, keyword_search, voting_score) VALUES ($1, $2, $3, $4, $5, $6);",
     [
       portfolio.url,
       portfolio.image,

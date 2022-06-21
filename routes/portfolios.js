@@ -11,12 +11,12 @@ import {
 router.get("/", async function (req, res) {
   //search for keyword
   if (req.query.keyword !== undefined) {
-    const result = getPortfoliosByKeyword(req.query.keyword);
+    const result = await getPortfoliosByKeyword(req.query.keyword);
     return res.json({ success: true, payload: result });
   }
   //search for exp level
   if (req.query.experience !== undefined) {
-    const result = getPortfoliosByExLevel(req.query.experience);
+    const result = await getPortfoliosByExLevel(req.query.experience);
     return res.json({ success: true, payload: result });
   }
   //returns all if no specific search done
@@ -26,13 +26,15 @@ router.get("/", async function (req, res) {
 
 //add portfolio
 router.post("/", async function (req, res) {
-  const result = addNewPortfolio(req.body);
+  console.log(req.body);
+  const result = await addNewPortfolio(req.body);
+  console.log('result ' + result)
   return res.json({ success: true, payload: result });
 });
 
 //delete portfolio
-router.delete("/", async function (req, res) {
-  const result = deletePortfolio(req.body.id);
+router.delete("/:id", async function (req, res) {
+  const result = await deletePortfolio(Number(req.params.id));
   return res.json({ success: true, payload: result });
 });
 

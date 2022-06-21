@@ -4,10 +4,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js",
+    "dbCreatePortfolioTable": "node ./db/scripts/createPortfolioTable.js"
   },
   "repository": {
     "type": "git",
