@@ -1,0 +1,13 @@
+import express from "express";
+import portfolioRouter from "./routes/portfolios.js";
+
+const PORT = 3001;
+const app = express();
+
+app.use(express.json());
+
+app.use("/portfolio", portfolioRouter);
+
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
