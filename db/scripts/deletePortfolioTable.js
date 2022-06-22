@@ -2,6 +2,6 @@ import { query } from "../index.js";
 import "dotenv/config";
 
 async function deletePortfolioTable() {
-  let res = await query(`DROP TABLE IF EXISTS portfolio;`);
+  let res = await query(`DROP TABLE IF EXISTS portfolios;`);
 }
 deletePortfolioTable();
