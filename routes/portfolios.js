@@ -13,6 +13,7 @@ import {
   UpdateKeywordPortfolio,
   UpdateExpPortfolio,
   UpdateDescriptionPortfolio,
+  getPortfoliosByDesigner,
 } from "../models/portfolios.js";
 
 router.get("/", async function (req, res) {
@@ -24,6 +25,11 @@ router.get("/", async function (req, res) {
   //search for exp level and return all portfolios
   if (req.query.experience !== undefined) {
     const result = await getPortfoliosByExLevel(req.query.experience);
+    return res.json({ success: true, payload: result });
+  }
+  //search for designer name and return all portfolios
+  if (req.query.designer !== undefined) {
+    const result = await getPortfoliosByDesigner(req.query.designer);
     return res.json({ success: true, payload: result });
   }
   //returns all portfolios if no specific search done

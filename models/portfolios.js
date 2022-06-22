@@ -24,6 +24,15 @@ export async function getPortfoliosByKeyword(keyword) {
   return res.rows;
 }
 
+//return all portfolios based on designer name
+export async function getPortfoliosByDesigner(designer) {
+  const res = await query(
+    `SELECT * FROM portfolios WHERE portfolios.designers_name LIKE '%' || $1 || '%';`,
+    [designer]
+  );
+  return res.rows;
+}
+
 //return portfolio by id
 export async function getPortfolioById(id) {
   const res = await query(
@@ -44,7 +53,7 @@ export async function addNewPortfolio(portfolio) {
       portfolio.experience_level,
       portfolio.keywords,
       portfolio.voting_score,
-      portfolio.designers_name
+      portfolio.designers_name,
     ]
   );
   return res.rows;
