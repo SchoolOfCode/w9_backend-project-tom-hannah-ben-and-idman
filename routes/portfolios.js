@@ -62,19 +62,19 @@ router.patch("/:id", async function (req, res) {
   let result = "";
 
   //checks what has been requested to be updated and calls appropriate function
-  if (keys[0] === "image") {
+  if (keys[0] === "site_image") {
     result = await UpdateImagePortfolio(Number(req.params.id), value[0]);
   }
-  if (keys[0] === "url") {
+  if (keys[0] === "site_url") {
     result = await UpdateURLPortfolio(Number(req.params.id), value[0]);
   }
   if (keys[0] === "description") {
     result = await UpdateDescriptionPortfolio(Number(req.params.id), value[0]);
   }
-  if (keys[0] === "experience") {
+  if (keys[0] === "experience_level") {
     result = await UpdateExpPortfolio(Number(req.params.id), value[0]);
   }
-  if (keys[0] === "keyword") {
+  if (keys[0] === "keyword_search") {
     result = await UpdateKeywordPortfolio(Number(req.params.id), value[0]);
   }
   return res.json({ success: true, payload: result });

@@ -38,12 +38,12 @@ export async function addNewPortfolio(portfolio) {
   const res = await query(
     "INSERT INTO portfolios (site_url, site_image, description, experience_level, keyword_search, voting_score) VALUES ($1, $2, $3, $4, $5, $6) RETURNING*;",
     [
-      portfolio.url,
-      portfolio.image,
+      portfolio.site_url,
+      portfolio.site_image,
       portfolio.description,
-      portfolio.experience,
-      portfolio.keyword,
-      portfolio.voting,
+      portfolio.experience_level,
+      portfolio.keyword_search,
+      portfolio.voting_score,
     ]
   );
   return res.rows;
