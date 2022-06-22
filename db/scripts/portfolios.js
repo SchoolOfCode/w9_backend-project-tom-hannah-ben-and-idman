@@ -6,6 +6,7 @@ let portfolios = [
     description: "graphic designer",
     experience_level: "high",
     keywords: "stylish art",
+    designers_name: "eunjeongyoo",
   },
   {
     site_url: "https://www.eunjeongyoo.com/",
@@ -14,6 +15,7 @@ let portfolios = [
     description: "graphic designer",
     experience_level: "high",
     keywords: "stylish art",
+    designers_name: "eunjeongyoo",
   },
   {
     site_url: "https://www.eunjeongyoo.com/",
@@ -22,6 +24,7 @@ let portfolios = [
     description: "graphic designer",
     experience_level: "high",
     keywords: "stylish art",
+    designers_name: "eunjeongyoo",
   },
   {
     site_url: "https://www.eunjeongyoo.com/",
@@ -30,6 +33,7 @@ let portfolios = [
     description: "graphic designer",
     experience_level: "high",
     keywords: "stylish art",
+    designers_name: "eunjeongyoo",
   },
 ];
 
