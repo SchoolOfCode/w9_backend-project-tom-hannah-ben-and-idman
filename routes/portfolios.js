@@ -74,7 +74,7 @@ router.patch("/:id", async function (req, res) {
   if (keys[0] === "experience_level") {
     result = await UpdateExpPortfolio(Number(req.params.id), value[0]);
   }
-  if (keys[0] === "keyword_search") {
+  if (keys[0] === "keywords") {
     result = await UpdateKeywordPortfolio(Number(req.params.id), value[0]);
   }
   return res.json({ success: true, payload: result });

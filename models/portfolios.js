@@ -18,7 +18,7 @@ export async function getPortfoliosByExLevel(experience) {
 //return all portfolios based on keyword search
 export async function getPortfoliosByKeyword(keyword) {
   const res = await query(
-    `SELECT * FROM portfolios WHERE portfolios.keyword_search LIKE '%' || $1 || '%';`,
+    `SELECT * FROM portfolios WHERE portfolios.keywords LIKE '%' || $1 || '%';`,
     [keyword]
   );
   return res.rows;
@@ -36,14 +36,15 @@ export async function getPortfolioById(id) {
 //add new portfolio
 export async function addNewPortfolio(portfolio) {
   const res = await query(
-    "INSERT INTO portfolios (site_url, site_image, description, experience_level, keyword_search, voting_score) VALUES ($1, $2, $3, $4, $5, $6) RETURNING*;",
+    "INSERT INTO portfolios (site_url, site_image, description, experience_level, keywords, voting_score, designers_name) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING*;",
     [
       portfolio.site_url,
       portfolio.site_image,
       portfolio.description,
       portfolio.experience_level,
-      portfolio.keyword_search,
+      portfolio.keywords,
       portfolio.voting_score,
+      portfolio.designers_name
     ]
   );
   return res.rows;
@@ -60,14 +61,15 @@ export async function deletePortfolio(reference) {
 //fully update a portfolio
 export async function fullUpdateOfPortfolio(id, portfolio) {
   const res = await query(
-    "UPDATE portfolios SET site_url = $1, site_image = $2, description = $3, experience_level = $4, keyword_search = $5, voting_score = $6 WHERE portfolio_id = $7 RETURNING*;",
+    "UPDATE portfolios SET site_url = $1, site_image = $2, description = $3, experience_level = $4, keywords = $5, voting_score = $6, designers_name = $7 WHERE portfolio_id = $8 RETURNING*;",
     [
       portfolio.url,
       portfolio.image,
       portfolio.description,
       portfolio.experience,
-      portfolio.keyword,
+      portfolio.keywords,
       portfolio.voting,
+      portfolio.designers_name,
       id,
     ]
   );
@@ -110,7 +112,7 @@ export async function UpdateExpPortfolio(id, value) {
 //update keyword search of portfolio
 export async function UpdateKeywordPortfolio(id, value) {
   const res = await query(
-    "UPDATE portfolios SET keyword_search = $1 WHERE portfolio_id = $2 RETURNING*;",
+    "UPDATE portfolios SET keywords = $1 WHERE portfolio_id = $2 RETURNING*;",
     [value, id]
   );
 }
