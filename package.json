@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "dbCreatePortfolioTable": "node ./db/scripts/createPortfolioTable.js",
-    "dbDeletePortfolioTable": "node ./db/scripts/deletePortfolioTable.js"
+    "dbDeletePortfolioTable": "node ./db/scripts/deletePortfolioTable.js",
+    "dbPopulatePortfolioTable": "node ./db/scripts/populatePortfolioTable.js"
   },
   "repository": {
     "type": "git",
