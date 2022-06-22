@@ -13,3 +13,5 @@ app.use("/portfolio", portfolioRouter);
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
+
+export default app;
