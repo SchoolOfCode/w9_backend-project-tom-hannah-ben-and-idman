@@ -40,13 +40,26 @@ router.get("/", async function (req, res) {
 //add portfolio
 router.post("/", async function (req, res) {
   const result = await addNewPortfolio(req.body);
-  return res.json({ success: true, payload: result });
+  return res.status(201).json({ success: true, payload: result });
 });
 
 //search for specific portfolio
+// router.get("/:id", async function (req, res) {
+//   const result = await getPortfolioById(Number(req.params.id));
+//   return res.json({ success: true, payload: result });
+// });
+
+//search for specific portfolio
 router.get("/:id", async function (req, res) {
-  const result = await getPortfolioById(Number(req.params.id));
-  return res.json({ success: true, payload: result });
+  const result = Number(req.params.id)
+  const portfolio = await getPortfolioById(result);
+  if (!portfolio) {
+    return res.status(404).json({
+      success: false,
+      reason: `No portfolio with the ID ${result} was found!`,
+    });
+  }
+  return res.json({ success: true, payload: portfolio });
 });
 
 //delete portfolio
