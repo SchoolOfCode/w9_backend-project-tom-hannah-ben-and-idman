@@ -52,7 +52,7 @@ export async function addNewPortfolio(portfolio) {
       portfolio.description,
       portfolio.experience_level,
       portfolio.keywords,
-      portfolio.voting_score,
+      0,
       portfolio.designers_name,
     ]
   );
@@ -72,12 +72,12 @@ export async function fullUpdateOfPortfolio(id, portfolio) {
   const res = await query(
     "UPDATE portfolios SET site_url = $1, site_image = $2, description = $3, experience_level = $4, keywords = $5, voting_score = $6, designers_name = $7 WHERE portfolio_id = $8 RETURNING*;",
     [
-      portfolio.url,
-      portfolio.image,
+      portfolio.site_url,
+      portfolio.site_image,
       portfolio.description,
-      portfolio.experience,
+      portfolio.experience_level,
       portfolio.keywords,
-      portfolio.voting,
+      portfolio.voting_score,
       portfolio.designers_name,
       id,
     ]

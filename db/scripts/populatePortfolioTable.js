@@ -14,7 +14,7 @@ async function populatePortfolioTable() {
         portfolios[i].description,
         portfolios[i].experience_level,
         portfolios[i].keywords,
-        portfolios[i].voting_score,
+        0,
         portfolios[i].designers_name,
       ]
     );
