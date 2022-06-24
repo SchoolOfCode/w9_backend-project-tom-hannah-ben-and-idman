@@ -136,6 +136,22 @@ keywords: "Photos",
 description: "",
 experience_level: "Mid-level"
   },
+  {
+    site_url: "https://dribbble.com/Slish_f",
+    site_image: "https://cdn.dribbble.com/users/2092880/screenshots/18543130/media/a36ee57bfd14b224bb5d59fcaf6d21d5.gif",
+    designers_name: "Filip Sliško",
+    keywords: "Animation",
+    description: "animation",
+    experience_level: "Beginner"
+      },
+  {
+    site_url: "https://www.instagram.com/designer.yudo/",
+    site_image: "https://cdn.dribbble.com/users/8135566/screenshots/18564005/media/e511e129a4f4bff0156e1a3497c8d97f.gif",
+    designers_name: "Nadezhda Yudo",
+    keywords: "animation",
+    description: "designer",
+    experience_level: "Beginner"
+      },
 ];
 
 export default portfolios;
