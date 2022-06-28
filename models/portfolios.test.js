@@ -1,14 +1,15 @@
+import request from "supertest";
+import app from "../app.js";
 import { test, expect } from "@jest/globals";
 import request from "supertest";
 import app from "../app.js";
 
 //test for success message in response
-test.only("Has the structure { success: true }", async  function () {
-	const actual = await request(app).get("/portfolio")  
-	console.log(actual)
-	
-	expect(actual.body.success).toEqual(true);
 
+test("Has the structure { success: true }", async function () {
+	const response = await request(app).get("/portfolio");
+	const res = response.body.success;
+	expect(res).toEqual(true);
 });
 
 //test for overall object structure
