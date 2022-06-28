@@ -84,8 +84,17 @@ Routes/portfolio.test.js:
 
 
 Model/portfolio.test.js: 
- 
-1. 
+1. A test to see if the overall structure of the portoflio object is correct which consists of the properties and its primitive data types. 
+
+2. To test if the `getPortfolio` function returns correct the correct array of objects with the correct structure tested above. 
+
+3. To test if the `getPortfoliosByExperience` function returns the correct object structure with the request experience level only.
+
+4. To test if the `getPortfoliosByKeyword` function returns the correct object structure with the request of keywords only.
+
+5. To test if the `getPortfoliosByDesigner` function will return with an array of objects with the correct structure for the specified Designer.
+
+6. To test if the `getPortfolioById` function will return with an object for that Id with the correct structure.
 
 # Original project brief
 
