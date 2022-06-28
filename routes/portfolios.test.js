@@ -22,7 +22,7 @@ test(`if get request is sent to /portfolio, all portfolios should be returned`, 
 });
 
 //test for specific portfolio
-test(`if get request is sent to /portfolio/1, portfolio with id 1 should be returned`, async () => {
+test.only(`if get request is sent to /portfolio/1, portfolio with id 1 should be returned`, async () => {
     const response = await request(app).get("/portfolio/1");
     const expectedBody = {success: true, payload: expect.arrayContaining([expect.objectContaining ({
         portfolio_id: 1,
@@ -37,6 +37,7 @@ test(`if get request is sent to /portfolio/1, portfolio with id 1 should be retu
     expect(response.statusCode).toBe(200);
     expect(response.headers["content-type"]).toMatch(/json/);
     expect(response.body).toEqual(expectedBody);
+    app.end()
 });
 
 //test for posting new portfolio
@@ -67,7 +68,7 @@ test(`if get request is sent to /portfolio/1, portfolio with id 1 should be retu
     });
 
 //test for delete portfolio by id
-test.only(`Sending a portfolio id to delete route, should delete portfolio entry and confirm`, async () => {
+test(`Sending a portfolio id to delete route, should delete portfolio entry and confirm`, async () => {
     const response = await request(app).delete("/portfolio/10")
     const expectedBody = {success: true, message: "deleted portfolio"}
     expect(response.statusCode).toBe(200);
