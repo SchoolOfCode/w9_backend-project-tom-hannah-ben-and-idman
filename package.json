@@ -13,7 +13,8 @@
     "start": "nodemon app.js",
     "dbCreatePortfolioTable": "node ./db/scripts/createPortfolioTable.js",
     "dbDeletePortfolioTable": "node ./db/scripts/deletePortfolioTable.js",
-    "dbPopulatePortfolioTable": "node ./db/scripts/populatePortfolioTable.js"
+    "dbPopulatePortfolioTable": "node ./db/scripts/populatePortfolioTable.js",
+    "dbResetPortfolio": "node ./db/scripts/deletePortfolioTable.js && node ./db/scripts/createPortfolioTable.js && node ./db/scripts/populatePortfolioTable.js"
   },
   "repository": {
     "type": "git",
