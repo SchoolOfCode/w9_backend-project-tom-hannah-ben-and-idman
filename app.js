@@ -2,7 +2,7 @@ import express from "express";
 import portfolioRouter from "./routes/portfolios.js";
 import cors from "cors";
 
-const PORT = 3002;
+const PORT = 3001;
 const app = express();
 
 app.use(cors());
