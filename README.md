@@ -18,6 +18,8 @@ Each portfolio in the database is an object with the following properties:
 
 ## Tests - what are they testing for, i.e. what can you be sure will be OK if the tests pass
 
+### Somewhere add that successful creation using POST method results in a 201 status code
+
 # Original project brief
 
 ## National Bootcamp - Week Nine Project Brief
