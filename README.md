@@ -68,6 +68,8 @@ dbResetPortfolio is a script included in the package.json
 To reset database write into your terminal `npm dbResetPortfolio`. This script includes the path of the delete, create and  populate portfolio files. 
 
 ## Env variables: what to name your envs to link up an external db
+You can use Heroku credentials in .env file to link to external database. 
+
 
 ## Tests - what are they testing for, i.e. what can you be sure will be OK if the tests pass
 
